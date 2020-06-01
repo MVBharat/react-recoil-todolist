@@ -10,7 +10,6 @@ __benchmarks__
 build/
 remote-repo/
 coverage/
-dist/
 rb.code-workspace
 .module-cache
 fixtures/dom/public/react-dom.js

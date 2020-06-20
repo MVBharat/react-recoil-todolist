@@ -1,14 +1,13 @@
 import React from 'react';
-import { AppContextProvider } from './context/AppContext';
-import AppComponent from './components/useEffectComponent/useEffectComponent';
-import HookCounterOne from './components/HookCounter/HookCounterOne';
-
+import { RecoilRoot } from 'recoil';
+import Counter from './components/Counter/counter';
+import User from './components/User/user';
 function App() {
   return (
-    <AppContextProvider>
-      {/* <AppComponent /> */}
-      <HookCounterOne />
-    </AppContextProvider>
+    <RecoilRoot>
+      <Counter />
+      <User />
+    </RecoilRoot>
   );
 }
 

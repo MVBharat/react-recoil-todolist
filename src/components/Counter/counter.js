@@ -1,6 +1,5 @@
 import React from 'react';
 import { numState } from '../../recoil/atoms/atom';
-import { squareState } from '../../recoil/selector/selector';
 import { useRecoilState, useRecoilValue } from 'recoil';
 
 function Counter() {

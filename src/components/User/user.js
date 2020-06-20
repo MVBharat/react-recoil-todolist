@@ -1,18 +1,16 @@
 import React from 'react';
-import { allUser } from '../../recoil/atoms/atom';
+import {getUserDataList } from '../../recoil/selector/selector'
 
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilValue } from 'recoil';
 
-function User() {
-  const [userList, setUser] = useRecoilState(allUser);
-  console.log(userList);
+const  User = () => {
 
+  const user = useRecoilValue(getUserDataList)
+  
+  console.log("user data: "+ user);
   return (
-    <div>
-      <p>{userList}</p>
-      {/* <p>User name: {userList.name}</p>
-      <p>User age {userList.age}</p> */}
-    </div>
-  );
+    <p>hello</p>
+  )
+  
 }
 export default User;

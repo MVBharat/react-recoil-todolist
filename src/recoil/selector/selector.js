@@ -1,9 +1,11 @@
 import { selector } from 'recoil';
-import { numState } from '../atoms/atom';
+import { getUserData } from '../data/user/userData'
 
-export const squareState = selector({
-  key: 'squareState',
-  get: ({ get }) => {
-    return get(numState) ** 2;
-  },
-});
+export const getUserDataList = selector({
+  key: "getUserDataList",
+  get: async () => {
+    const response = await getUserData();
+    return response
+  }
+
+})

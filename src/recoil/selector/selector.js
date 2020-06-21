@@ -1,11 +1,19 @@
 import { selector } from 'recoil';
-import { getUserData } from '../data/user/userData'
+import { getUserData } from '../data/user/userData';
+import { numState } from '../atoms/atom';
 
-export const getUserDataList = selector({
-  key: "getUserDataList",
-  get: async () => {
-    const response = await getUserData();
-    return response
-  }
+// TODO Use async-wait
+export const getUserDataLists = selector({
+  key: 'getUserDataLists',
+  get: ({ get }) => {
+    const response = getUserData();
+    return response;
+  },
+});
 
-})
+export const addToNumState = selector({
+  key: 'addToNumState',
+  get: ({ get }) => {
+    return get(numState) + 2;
+  },
+});

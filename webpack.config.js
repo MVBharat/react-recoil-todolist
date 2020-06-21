@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
   // entry: path.join(__dirname, './src/index.js'),
-  entry: './src/index.js',
+  entry: ['./src/index.js'],
   module: {
     rules: [
       {

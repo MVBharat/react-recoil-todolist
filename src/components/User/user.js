@@ -1,16 +1,22 @@
 import React from 'react';
-import {getUserDataList } from '../../recoil/selector/selector'
+import {
+  getUserDataLists,
+  addToNumState,
+} from '../../recoil/selector/selector';
+import { numState } from '../../recoil/atoms/atom';
 
-import { useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
-const  User = () => {
-
-  const user = useRecoilValue(getUserDataList)
-  
-  console.log("user data: "+ user);
-  return (
-    <p>hello</p>
-  )
-  
+function User() {
+  const users = useRecoilValue(getUserDataLists);
+  const numSt = useRecoilValue(addToNumState);
+  const usersFromAtom = useRecoilState(numState);
+  return users.map((user) => (
+    <div key={user.id}>
+      {user.name}, Count: {usersFromAtom}, <br />
+      Add +2: {numSt}
+    </div>
+  ));
 }
+
 export default User;

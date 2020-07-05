@@ -11,6 +11,7 @@ function User() {
   const users = useRecoilValue(getUserDataLists);
   const numSt = useRecoilValue(addToNumState);
   const usersFromAtom = useRecoilState(numState);
+  
   return users.map((user) => (
     <div key={user.id}>
       {user.name}, Count: {usersFromAtom}, <br />

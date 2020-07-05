@@ -1,11 +1,14 @@
 import React from 'react';
 import { RecoilRoot } from 'recoil';
-import User from './components/User/user';
+import TodoList from './components/TodoList/TodoList';
 
 function App() {
   return (
     <RecoilRoot>      
-      <User />
+      <React.Suspense fallback={<div> Loading </div>}>
+        <TodoList />
+        Hello
+      </React.Suspense>
     </RecoilRoot>
   );
 }

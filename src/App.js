@@ -5,10 +5,10 @@ import TodoList from './components/TodoList/TodoList';
 function App() {
   return (
     <RecoilRoot>      
-      <React.Suspense fallback={<div> Loading </div>}>
+      {/* <React.Suspense fallback={<div> Loading </div>}> */}
         <TodoList />
         Hello
-      </React.Suspense>
+      {/* </React.Suspense> */}
     </RecoilRoot>
   );
 }

@@ -8,22 +8,22 @@ function CreateTodo() {
 
     const addTodo = () => {
         setTodoList((oldTodoList) => [
-                ...oldTodoList,
-                {
-                    id: getId(),
-                    text: inputValue,
-                    isComplete: false
-                }
-            ])
-        setInputvalue('');
+            ...oldTodoList,
+            {
+                id: getId(),
+                text: inputValue,
+                isComplete: false,
+            },
+        ]);
+        setInputValue('');
     }
 
-    const onChange = ({target: {value}}) =>{
-        setInputvalue(value)
+    const onChanges = ({target: {value}}) =>{
+        setInputValue(value)
     }
     return (
         <div>
-            <input type="text" value={inputValue} onChange={onChange} />
+            <input type="text" value={inputValue} onChange={onChanges} />
             <button onClick={addTodo}>Add</button>
         </div>
     )

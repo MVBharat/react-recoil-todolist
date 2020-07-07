@@ -11,7 +11,7 @@ function TodoList() {
         <>
             <CreateTodo>
                 {
-                    todoList.map(item => (<TodoItem key={item.id} />))
+                    todoList.map(todoItem => (<TodoItem key={todoItem.id} item={todoItem} />))
                 }
             </CreateTodo>
         </>

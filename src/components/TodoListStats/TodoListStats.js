@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRecoilState } from 'recoil'
-import { todoListFilterState } from '../../recoil/atoms/atom'
+import {todoListStatsState } from '../../recoil/selector/selector';
 
 function TodoListStats() {
     const {
@@ -8,15 +8,15 @@ function TodoListStats() {
         totalCompletedNum,
         totalUncompletedNum,
         perecentCompleted
-    } = useRecoilState(todoListFilterState);
+    } = useRecoilState(todoListStatsState);
 
     const formatedPercentCompleted = Math.round(perecentCompleted * 100);
     return (
        <ul>
            <li>Totle Item: {totalNum} </li>
-    <li>Items Completed: {totalCompletedNum} </li>
+            <li>Items Completed: {totalCompletedNum} </li>
            <li>Items Uncompleted: {totalUncompletedNum} </li>
-    <li>Item Percent Completed: {formatedPercentCompleted}</li>
+            <li>Item Percent Completed: {formatedPercentCompleted}</li>
        </ul>
     )
 }

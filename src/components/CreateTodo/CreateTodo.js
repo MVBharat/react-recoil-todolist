@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { useRecoilState } from 'recoil'
+import { useSetRecoilState } from 'recoil'
 import { todoListState } from '../../recoil/atoms/atom'
 
-function CreateTodo() {
+
+const CreateTodo = () => {
     const [inputValue, setInputValue] = useState('');
-    const setTodoList = useRecoilState(todoListState)
+    const setTodoList = useSetRecoilState(todoListState)
 
     const addTodo = () => {
         setTodoList((oldTodoList) => [
@@ -18,8 +19,8 @@ function CreateTodo() {
         setInputValue('');
     }
 
-    const onChanges = ({target: {value}}) =>{
-        setInputValue(value)
+    const onChanges = (e) =>{
+        setInputValue(e.target.value)
     }
     return (
         <div>

@@ -7,7 +7,6 @@ function App() {
     <RecoilRoot>      
       {/* <React.Suspense fallback={<div> Loading </div>}> */}
         <TodoList />
-        Hello
       {/* </React.Suspense> */}
     </RecoilRoot>
   );
